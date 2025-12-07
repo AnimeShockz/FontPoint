@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Project</title>
+<style>
+  /* Load custom font */
+  @font-face {
+    font-family: 'Harlow Solid Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Harlow Solid Italic'), url('HARLOWSI_1.woff') format('woff');
+  }
+
+  body, button {
+    font-family: 'Harlow Solid Italic', Arial, sans-serif;
+    margin: 0;
+    background-color: #0094ff;
+  }
+
+  /* Top navigation bar */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;       /* horizontal padding */
+    height: 120px;         /* fixed top bar height */
+    background-color: #ff6a00;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Logo styling */
+  .logo {
+    max-height: 160%;       /* fills top bar height */
+    width: auto;            /* maintain aspect ratio */
+    object-fit: contain;    
+    image-rendering: auto;  /* fixed typo */
+    display: block;         /* remove inline spacing issues */
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 3px;
+  }
+
+  .nav-buttons button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+  }
+
+  .nav-buttons button:hover {
+    background-color: #DE4F00;
+    border-radius: 5px;
+  }
+
+  /* Container for main buttons */
+  .main-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 120px); /* full viewport minus top bar */
+  }
+
+  /* Full-width button bars */
+  .button-bar {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-bar button {
+    width: clamp(400px, 60%, 1200px);
+    padding: 60px 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0085e6;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .button-bar button:hover {
+    background-color: #0062C6;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top navigation -->
+  <div class="top-bar">
+    <img src="https://i.imgur.com/vAbj2iN.png" alt="Logo" class="logo">
+    <div class="nav-buttons">
+      <button>Log-in</button>
+	  <button>Home</button>
+      <button>About</button>
+    </div>
+  </div>
+
+  <!-- Main buttons container -->
+  <div class="main-buttons">
+    <div class="button-bar"><button onclick="location.href='page1.html'">Font 1</button></div>
+    <div class="button-bar"><button onclick="location.href='page2.html'">Font 2</button></div>
+    <div class="button-bar"><button onclick="location.href='page3.html'">Font 3</button></div>
+    <div class="button-bar"><button onclick="location.href='page4.html'">Font 4</button></div>
+  </div>
+
+</body>
+</html>
