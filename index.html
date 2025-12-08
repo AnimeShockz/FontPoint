@@ -94,7 +94,7 @@
     background-color: #0062C6;
   }
 
-  /* Floating button in bottom-right */
+  /* Floating button in bottom-right (white version) */
   .floating-button {
     position: fixed;
     bottom: 20px;
@@ -111,6 +111,9 @@
     padding: 0;
     background-color: transparent;
     transition: transform 0.2s;
+
+    /* Force PNG to appear white */
+    filter: invert(100%) brightness(200%);
   }
 
   .floating-button:hover {
@@ -138,7 +141,7 @@
     <div class="button-bar"><button onclick="location.href='page4.html'">Font 4</button></div>
   </div>
 
-  <!-- Floating button -->
+  <!-- Floating share button -->
   <button class="floating-button" onclick="alert('Share clicked!')"></button>
 
 </body>
