@@ -37,14 +37,13 @@
     z-index: 1000;
   }
 
-  /* Logo styling */
+  /* Logo styling with scaling */
   .logo {
-    height: 150px;          /* initial visible size */
+    height: clamp(60px, 10vw, 100px); /* scales with viewport width */
     width: auto;
     object-fit: contain;
-    flex-shrink: 1;        /* allow shrinking */
-    min-height: 50px;      /* do not shrink too much */
-    margin-left: 20px;     /* left padding */
+    flex-shrink: 1;      
+    margin-left: 20px;
     display: block;
   }
 
@@ -52,11 +51,11 @@
   .nav-buttons {
     display: flex;
     gap: 10px;
-    flex-shrink: 1;        /* allow shrinking */
+    flex-shrink: 1;
   }
 
   .nav-buttons button {
-    font-size: clamp(12px, 2vw, 30px); /* scale with screen */
+    font-size: clamp(12px, 2vw, 30px); /* scales with screen width */
     padding: 6px 12px;
     background: none;
     border: none;
