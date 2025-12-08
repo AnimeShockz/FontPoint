@@ -94,22 +94,22 @@
     background-color: #0062C6;
   }
 
-  /* Floating bottom-right button */
+  /* Floating bottom-right button (visible and noticeable) */
   .floating-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 60px;              /* base width */
-    height: 60px;             /* fixed height keeps it circular */
+    width: 80px;
+    height: 80px;
     border: none;
     border-radius: 50%;
-    background: url('Share icon.png') no-repeat center center;
+    background: url('https://i.imgur.com/YourImage.png') no-repeat center center;
     background-size: contain;  /* preserves aspect ratio */
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: transform 0.2s;
     z-index: 1001;
     padding: 0;
+    background-color: rgba(255,0,0,0.3); /* temporary color to confirm visibility */
   }
 
   .floating-button:hover {
