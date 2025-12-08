@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>School Project</title>
@@ -25,8 +24,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;       /* horizontal padding */
-    height: 120px;         /* fixed top bar height */
+    padding: 0 2%;       /* horizontal padding relative to viewport */
+    height: 15vh;        /* scales with viewport height */
+    min-height: 80px;    /* ensures usability on small screens */
+    max-height: 150px;   /* avoids huge bar on tall screens */
     background-color: #ff6a00;
     color: white;
     position: sticky;
@@ -34,28 +35,30 @@
     z-index: 1000;
   }
 
-  /* Logo styling */
+  /* Logo scaling */
   .logo {
-    max-height: 160%;       /* fills top bar height */
-    width: auto;            /* maintain aspect ratio */
-    object-fit: contain;    
-    image-rendering: auto;  /* fixed typo */
-    display: block;         /* remove inline spacing issues */
+    height: 80%;         /* 80% of top-bar height */
+    width: auto;
+    object-fit: contain;
+    display: block;
   }
 
+  /* Top-bar buttons */
   .nav-buttons {
     display: flex;
-    gap: 3px;
+    gap: 1vw;
   }
 
   .nav-buttons button {
+    font-size: 4vh;      /* scales with top bar */
+    padding: 0.5vh 1vw;  /* scales padding */
     background: none;
     border: none;
     color: white;
-    font-size: 30px;
     cursor: pointer;
-    padding: 10px 20px;
     transition: 0.3s;
+    flex-shrink: 1;      /* allow shrinking if needed */
+    white-space: nowrap;  /* prevents wrapping */
   }
 
   .nav-buttons button:hover {
@@ -68,14 +71,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: calc(100vh - 120px); /* full viewport minus top bar */
+    min-height: calc(100vh - 15vh); /* remaining viewport height minus top-bar */
+    padding: 2vh 0;
   }
 
   /* Full-width button bars */
   .button-bar {
     width: 100%;
-    margin: 10px 0;
-    display: flex;
+    margin: 1vh 0;                 
+    display: flex;                   
     justify-content: center;
   }
 
@@ -94,6 +98,7 @@
   .button-bar button:hover {
     background-color: #0062C6;
   }
+
 </style>
 </head>
 <body>
@@ -103,7 +108,7 @@
     <img src="https://i.imgur.com/vAbj2iN.png" alt="Logo" class="logo">
     <div class="nav-buttons">
       <button>Log-in</button>
-	  <button>Home</button>
+      <button>Home</button>
       <button>About</button>
     </div>
   </div>
