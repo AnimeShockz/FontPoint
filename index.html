@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>School Project</title>
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
 <style>
   /* Load custom font */
   @font-face {
@@ -25,38 +29,41 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    height: 100px;        /* fixed height */
+    height: 100px;
     background-color: #ff6a00;
     color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
-    flex-wrap: nowrap;    /* prevent wrapping */
   }
 
+  /* Logo styling */
   .logo {
-    height: 80%;          /* fills most of top bar height */
+    height: 80px;          /* initial visible size */
     width: auto;
     object-fit: contain;
-    flex-shrink: 1;       /* allow shrinking on narrow screens */
-    min-width: 50px;      /* don’t get too small */
+    flex-shrink: 1;        /* allow shrinking */
+    min-height: 50px;      /* do not shrink too much */
+    margin-left: 20px;     /* left padding */
+    display: block;
   }
 
+  /* Navigation buttons */
   .nav-buttons {
     display: flex;
-    gap: 10px;            /* spacing between buttons */
-    flex-shrink: 1;       /* scale down when needed */
+    gap: 10px;
+    flex-shrink: 1;        /* allow shrinking */
   }
 
   .nav-buttons button {
-    font-size: clamp(12px, 2vw, 30px); /* responsive font size */
+    font-size: clamp(12px, 2vw, 30px); /* scale with screen */
     padding: 6px 12px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
     transition: 0.3s;
-    white-space: nowrap;  /* prevents breaking text */
+    white-space: nowrap;
   }
 
   .nav-buttons button:hover {
@@ -69,22 +76,21 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: calc(100vh - 100px); /* viewport minus top bar height */
-    padding: 2vh 0;
+    min-height: calc(100vh - 100px);
   }
 
   /* Full-width button bars */
   .button-bar {
     width: 100%;
-    margin: 1vh 0;                 
-    display: flex;                   
+    margin: 10px 0;
+    display: flex;
     justify-content: center;
   }
 
   .button-bar button {
     width: clamp(400px, 60%, 1200px);
-    padding: 80px 0;               /* slightly taller buttons */
-    font-size: 20px;               /* larger text */
+    padding: 60px 0;
+    font-size: 18px;
     border: none;
     border-radius: 8px;
     background-color: #0085e6;
