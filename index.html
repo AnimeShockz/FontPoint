@@ -36,7 +36,7 @@
 
   /* Logo styling */
   .logo {
-    max-height: 100px;
+    max-height: 80px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -94,7 +94,7 @@
     background-color: #0062C6;
   }
 
-  /* Floating bottom-right button (visible and noticeable) */
+  /* Floating button in bottom-right */
   .floating-button {
     position: fixed;
     bottom: 20px;
@@ -103,13 +103,14 @@
     height: 80px;
     border: none;
     border-radius: 50%;
-    background: url('https://i.imgur.com/YourImage.png') no-repeat center center;
-    background-size: contain;  /* preserves aspect ratio */
+    background: url('Share icon.png') no-repeat center center;
+    background-size: contain;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     z-index: 1001;
     padding: 0;
-    background-color: rgba(255,0,0,0.3); /* temporary color to confirm visibility */
+    background-color: transparent;
+    transition: transform 0.2s;
   }
 
   .floating-button:hover {
@@ -137,8 +138,8 @@
     <div class="button-bar"><button onclick="location.href='page4.html'">Font 4</button></div>
   </div>
 
-  <!-- Floating bottom-right button -->
-  <button class="floating-button" onclick="alert('Button clicked!')"></button>
+  <!-- Floating button -->
+  <button class="floating-button" onclick="alert('Share clicked!')"></button>
 
 </body>
 </html>
