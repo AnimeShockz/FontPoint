@@ -22,17 +22,18 @@
 
   /* Top navigation bar */
   .top-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    height: 120px;
-    background-color: #ff6a00;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: #ff6a00;
+  z-index: 1000;
+}
+
+body {
+  padding-top: 80px;
+}
 
   /* Logo styling */
   .logo {
