@@ -176,22 +176,16 @@ body {
 function copyLink() {
   const url = location.href;
 
-  try {
-    navigator.clipboard.writeText(url);
-    alert("Link Copied!");
-  } catch (err) {
-    fallbackCopy(url);
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).catch(() => {});
   }
-}
 
-function fallbackCopy(text) {
-  const input = document.createElement("input");
-  input.value = text;
-  document.body.appendChild(input);
-  input.select();
-  document.execCommand("copy");
-  document.body.removeChild(input);
-  alert("Link Copied!");
+  const pill = document.getElementById("copy-pill");
+  pill.classList.add("show");
+
+  setTimeout(() => {
+    pill.classList.remove("show");
+  }, 1600);
 }
 </script>
 
