@@ -147,7 +147,20 @@ body {
   </div>
 
   <!-- Floating share button -->
-  <button class="floating-button" onclick="alert('Share clicked!')"></button>
+  <button class="floating-button" onclick="alert('Link Copied!')"></button>
+  <script>
+  function copyLink() {
+    const url = window.location.href;
+
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        alert("Link Copied!");
+      })
+      .catch(() => {
+        alert("Copy failed. Try manually.");
+      });
+  }
+</script>
 
 </body>
 </html>
