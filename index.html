@@ -147,19 +147,29 @@ body {
   </div>
 
   <!-- Floating share button -->
-  <button class="floating-button" onclick="alert('Link Copied!')"></button>
-  <script>
-  function copyLink() {
-    const url = window.location.href;
+ <button class="floating-button" onclick="copyLink()"></button>
 
-    navigator.clipboard.writeText(url)
-      .then(() => {
-        alert("Link Copied!");
-      })
-      .catch(() => {
-        alert("Copy failed. Try manually.");
-      });
+<script>
+function copyLink() {
+  const url = location.href;
+
+  try {
+    navigator.clipboard.writeText(url);
+    alert("Link Copied!");
+  } catch (err) {
+    fallbackCopy(url);
   }
+}
+
+function fallbackCopy(text) {
+  const input = document.createElement("input");
+  input.value = text;
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand("copy");
+  document.body.removeChild(input);
+  alert("Link Copied!");
+}
 </script>
 
 </body>
