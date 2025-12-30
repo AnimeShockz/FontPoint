@@ -68,34 +68,6 @@ body {
     border-radius: 5px;
   }
 
-  /* Container for main buttons */
-  .main-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: calc(100vh - 120px);
-  }
-
-  /* Full-width button bars */
-  .button-bar {
-    width: 100%;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .button-bar button {
-    width: clamp(400px, 60%, 1200px);
-    padding: 60px 0;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    background-color: #0085e6;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
   .button-bar button:hover {
     background-color: #0062C6;
   }
@@ -158,15 +130,6 @@ body {
     </div>
   </div>
 
-  <!-- Main buttons container -->
-  <div class="main-buttons">
-    <div class="button-bar"><button onclick="location.href='page1.html'">Font 1</button></div>
-    <div class="button-bar"><button onclick="location.href='page2.html'">Font 2</button></div>
-    <div class="button-bar"><button onclick="location.href='page3.html'">Font 3</button></div>
-    <div class="button-bar"><button onclick="location.href='page4.html'">Font 4</button></div>
-    <div class="button-bar"><button onclick="location.href='page4.html'">Font 5</button></div>
-    <div class="button-bar"><button onclick="location.href='page4.html'">Font 6</button></div>
-  </div>
 
   <!-- Floating share button -->
  <button class="floating-button" onclick="copyLink()"></button>
