@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Project</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<style>
+  /* Load custom font */
+  @font-face {
+    font-family: 'Harlow Solid Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Harlow Solid Italic'), url('HARLOWSI_1.woff') format('woff');
+  }
+
+  body, button {
+    font-family: 'Harlow Solid Italic', Arial, sans-serif;
+    margin: 0;
+    background-color: #0094ff;
+  }
+
+  /* Top navigation bar */
+  .top-bar {
+position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;             /* bar height for buttons */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;      /* centers nav buttons */
+  overflow: hidden;        /* allows logo overflow */
+  padding: 0 20px;
+  background-color: #ff6a00;
+}
+
+body {
+  padding-top: 60px;
+}
+
+  /* Logo styling */
+  .logo {
+    height: 120px;
+  width: auto;
+  flex-shrink: 0;
+    display: block;
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-buttons button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    line-height: 1; 
+    cursor: pointer;
+    padding: 10px 10px;
+    transition: 0.3s;
+  }
+
+  .nav-buttons button:hover {
+    background-color: #DE4F00;
+    border-radius: 5px;
+  }
+
+  .button-bar button:hover {
+    background-color: #0062C6;
+  }
+
+  /* Floating button in bottom-right (white version) */
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 50%;
+    background: url('Share icon.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+    background-color: transparent;
+    transition: transform 0.2s;
+
+    /* Force PNG to appear white */
+    filter: invert(100%) brightness(200%);
+  }
+
+  .floating-button:hover {
+    transform: scale(1.1);
+  }
+  #copy-pill {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: #ff6a00;          /* blaze orange */
+  color: white;
+  padding: 12px 18px;
+  border-radius: 15px;         /* pill shape */
+  font-size: 30px;
+  white-space: nowrap;
+  transform: translateX(130%);
+  transition: transform 1s ease;
+  z-index: 2000;
+}
+
+#copy-pill.show {
+  transform: translateX(0);
+}
+
+</style>
+</head>
+<div id="copy-pill">Copied!</div>
+  <body>
+
+  <!-- Top navigation -->
+  <div class="top-bar">
+    <img src="https://i.imgur.com/vAbj2iN.png" alt="Logo" class="logo">
+    <div class="nav-buttons">
+      <button>Log-in</button>
+      <button>Home</button>
+      <button>About</button>
+    </div>
+  </div>
+
+
+  <!-- Floating share button -->
+ <button class="floating-button" onclick="copyLink()"></button>
+
+<script>
+function copyLink() {
+  const url = location.href;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).catch(() => {});
+  }
+
+  const pill = document.getElementById("copy-pill");
+  pill.classList.add("show");
+
+  setTimeout(() => {
+    pill.classList.remove("show");
+  }, 6000);
+}
+</script>
+
+</body>
+</html>
