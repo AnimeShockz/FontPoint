@@ -69,10 +69,6 @@ body {
     border-radius: 5px;
   }
 
-  .button-bar button:hover {
-    background-color: #0062C6;
-  }
-
   /* Floating button in bottom-right (white version) */
   .floating-button {
     position: fixed;
@@ -132,7 +128,22 @@ body {
   font-size: 40px;
   line-height: 1.6;
 }
+.download-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 22px;
+  color: white;
+  background-color: #ff6a00;
+  border-radius: 8px;
+  text-decoration: none; /* removes underline */
+  transition: background 0.3s;
+}
 
+.download-button:hover {
+  background-color: #DE4F00;
+}
+  
 </style>
 </head>
 <div id="copy-pill">Copied!</div>
@@ -156,6 +167,8 @@ body {
     Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. 
     Sed nisi. Nulla quis sem at nibh elementum imperdiet.
   </p>
+    <!-- External link button -->
+  <a href="https://example.com" target="_blank" class="download-button">Visit Website</a>
 </div>
 
   <!-- Floating share button -->
