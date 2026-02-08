@@ -14,6 +14,10 @@
     src: local('Harlow Solid Italic'), url('HARLOWSI_1.woff') format('woff');
   }
 
+  @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
   body, button {
     font-family: 'Harlow Solid Italic', Arial, sans-serif;
     margin: 0;
@@ -142,11 +146,21 @@ body {
 #copy-pill.show {
   transform: translateX(0);
 }
-
-    @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-
+ 
   .shrikhand-regular {
   font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    .playfair-regular {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  
+  .lora {
+  font-family: "Lora", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -169,8 +183,8 @@ body {
   <!-- Main buttons container -->
   <div class="main-buttons">
     <div class="button-bar"><button class="shrikhand-regular" onclick="location.href='page1.html'">Shrikhand</button></div>
-    <div class="button-bar"><button onclick="location.href='page2.html'">Font 2</button></div>
-    <div class="button-bar"><button onclick="location.href='page3.html'">Font 3</button></div>
+    <div class="button-bar"><button class="Playfair Display" onclick="location.href='page2.html'">Playfair Display</button></div>
+    <div class="button-bar"><button class="Lora" onclick="location.href='page3.html'">Lora</button></div>
     <div class="button-bar"><button onclick="location.href='page4.html'">Font 4</button></div>
     <div class="button-bar"><button onclick="location.href='page4.html'">Font 5</button></div>
     <div class="button-bar"><button onclick="location.href='page4.html'">Font 6</button></div>
